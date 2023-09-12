@@ -100,7 +100,22 @@
 
         </section>
         <!-- A button to create new todos which pops up an overlay -->
-        <button class="create-btn" title="Create To-Do">+</button>
+        <button class="create-overlay-btn" title="Create To-Do">+</button>
+        <section class="create-todo-overlay">
+            <div class="create-todo-header">
+                <input type="text" placeholder="Title" class="create-todo-title">
+                <button class="create-todo-close-btn">&times;</button>
+            </div>
+            <div class="create-todo-main">
+                <textarea name="" id="create-description" cols="30" rows="12" placeholder="Description" class="create-todo-desc"></textarea>
+                <label for="create-deadline">
+                    <span class="create-deadline-heading">Set Deadline : </span>
+                    <input type="date" name="" id="create-deadline">
+                </label>
+            </div>
+            <button class="create-todo-btn">Add To-Do</button>
+        </section>
     </main>
+    <div id="overlay"></div>
 </body>
 </html>

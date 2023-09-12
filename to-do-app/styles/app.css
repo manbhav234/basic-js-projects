@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -60,7 +61,7 @@ header a:visited {
 
 /* Create button CSS */
 
-.create-btn {
+.create-overlay-btn {
     display: block;
     height: 60px;
     width: 60px;
@@ -109,7 +110,7 @@ header a:visited {
     height: 28px;
     width: 28px;
     cursor: pointer;
-    accent-color: green;
+    accent-color: #ca2e55;
 }
 
 .delete {
@@ -121,4 +122,105 @@ header a:visited {
 .delete:hover {
     cursor: pointer;
     content: url('../images/dustbin-open.png');
+}
+
+
+/* Create to-do overlay CSS */
+
+.create-todo-overlay {
+    background-color: white;
+    box-shadow: 10px 10px 50px black;
+    border-radius: 15px;
+    width: 50%;
+    height: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+}
+
+.create-todo-overlay.active {
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.create-todo-header {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.create-todo-title{
+    width: 80%;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 8px;
+    margin: 10px;
+    border: none;
+    border-bottom: 2px solid lightgrey;
+    outline: none;
+    color: #ca2e55;
+}
+
+.create-todo-close-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.create-todo-main {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.create-todo-desc {
+    margin: 10px;
+    border: none;
+    font-size: 1rem;
+    width: 80%;
+    padding: 10px;
+    outline: none;
+    resize: none;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 23px;
+}
+
+.create-deadline-heading {
+    margin: 15px;
+    font-weight: bold;
+}
+
+.create-todo-btn {
+    position: absolute;
+    margin-top: 50px;
+    right: 15px;
+    background-color: #ca2e55;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    background-color: rgb(0,0,0);
+    pointer-events: none;
+}
+
+#overlay.active {
+    pointer-events: all;
+    opacity: 0.8;
+
 }
