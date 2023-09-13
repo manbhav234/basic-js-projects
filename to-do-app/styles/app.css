@@ -77,7 +77,7 @@ header a:visited {
     bottom: 20px;
 }
 
-.create-btn:hover {
+.create-overlay-btn:hover {
     background-color: #b52a4d;
 }
 
@@ -111,6 +111,11 @@ header a:visited {
     width: 28px;
     cursor: pointer;
     accent-color: #ca2e55;
+}
+.checkbox:checked {
+    .main-title {
+        text-decoration: line-through;
+    }
 }
 
 .delete {
@@ -197,7 +202,7 @@ header a:visited {
 
 .create-todo-btn {
     position: absolute;
-    margin-top: 50px;
+    bottom: 10px;
     right: 15px;
     background-color: #ca2e55;
     color: white;
